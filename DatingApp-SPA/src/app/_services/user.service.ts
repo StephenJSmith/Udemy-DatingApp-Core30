@@ -23,4 +23,10 @@ export class UserService {
 
     return this.http.get<User>(url);
   }
+
+  updateUser(id: number, user: User) {
+    const url =  this.baseUrl + 'users/' + id;
+
+    return this.http.put(url, user);
+  }
 }
