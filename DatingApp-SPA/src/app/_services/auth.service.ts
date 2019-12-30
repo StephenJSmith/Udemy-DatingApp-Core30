@@ -41,10 +41,10 @@ export class AuthService {
       );
   }
 
-  register(model: any) {
+  register(user: User) {
     const url = this.baseUrl + 'register';
 
-    return this.http.post(url, model);
+    return this.http.post(url, user);
   }
 
   loggedIn() {

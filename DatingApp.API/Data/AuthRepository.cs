@@ -30,6 +30,8 @@ namespace DatingApp.API.Data
 
     public async Task<User> Register(User user, string password)
     {
+      user.Username = user.Username.ToLower();
+      
       byte[] passwordHash, passwordSalt;
       CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
